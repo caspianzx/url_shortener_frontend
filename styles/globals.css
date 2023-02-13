@@ -146,3 +146,11 @@ form {
 .ant-modal-close {
   margin-top: 0px !important;
 }
+
+.ant-result-title {
+  color: white !important;
+}
+
+.ant-result-subtitle {
+  color: white !important;
+}

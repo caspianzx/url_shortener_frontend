@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, Controller } from "react-hook-form";
 import { Input as AntdInput, Modal } from "antd";
 import validator from 'validator';
+import useSWRMutation from 'swr/mutation'
 
 async function sendRequest(url: string, { arg } : any) {
   try {
@@ -10,7 +11,7 @@ async function sendRequest(url: string, { arg } : any) {
       headers: {
         'Content-Type':'application/json'
       },
-      body: JSON.stringify(arg)
+      body: JSON.stringify(arg),
     })
 
     return res.json()
@@ -20,8 +21,6 @@ async function sendRequest(url: string, { arg } : any) {
 
   }
 }
-
-import useSWRMutation from 'swr/mutation'
 
  const ShortenUrlForm = () => {
 
