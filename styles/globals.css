@@ -25,10 +25,10 @@ h1 {
   margin: 0 auto;
 }
 
-button[type="button"] {
-  background: black;
-  border: 1px solid white;
-}
+/*button[type="button"] {*/
+/*  background: black;*/
+/*  border: 1px solid white;*/
+/*}*/
 
 p {
   color: #bf1650;
@@ -152,5 +152,33 @@ form {
 }
 
 .ant-result-subtitle {
+  color: white !important;
+}
+
+.shortened-url-box {
+  margin-top: 40px;
+  text-align: center;
+  border: solid #e5e5e5 1px;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.copy-link-section {
+  display: flex;
+  justify-content: center;
+}
+
+.copy-link-button {
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  width: 40%;
+}
+
+.copy-link-button:hover {
+  background: #bf1650;
   color: white !important;
 }

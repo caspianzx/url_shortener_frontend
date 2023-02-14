@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from "react-hook-form";
-import { Input as AntdInput, Modal } from "antd";
+import { Input as AntdInput, Modal, message, Button } from "antd";
 import validator from 'validator';
 import useSWRMutation from 'swr/mutation'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { CopyOutlined } from '@ant-design/icons';
+
 
 async function sendRequest(url: string, { arg } : any) {
   try {
@@ -53,8 +56,15 @@ async function sendRequest(url: string, { arg } : any) {
     setIsModalOpen(false);
   };
 
+  // display link copy message
+   const [messageApi, contextHolder] = message.useMessage();
+   const notify = () => {
+     messageApi.info('Link copied!');
+   };
+
   return (
       <>
+        {contextHolder}
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>Enter a long URL to make a short url</label>
           <Controller
@@ -69,8 +79,15 @@ async function sendRequest(url: string, { arg } : any) {
         {requestError && <p>{requestError.message}</p>}
 
         <Modal title="Your shortened url" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
-          {/*implement copy to clipboard if there is time*/}
-          <div style={{marginTop: '40px', textAlign: "center"}}>{shortenedUrl}</div>
+          <div className={"shortened-url-box"}>{shortenedUrl}</div>
+          <div className={"copy-link-section"}>
+            <CopyToClipboard
+                text={shortenedUrl}
+                onCopy={() => notify()}
+            >
+              <Button className={"copy-link-button"}><CopyOutlined />Copy</Button>
+            </CopyToClipboard>
+          </div>
         </Modal>
       </>
   )

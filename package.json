@@ -10,9 +10,11 @@
     "format": "prettier --write \"pages/**/*.tsx\" "
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@next/font": "13.1.6",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
+    "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-dom": "18.0.10",
     "@types/validator": "^13.7.12",
     "antd": "^5.2.0",
@@ -20,6 +22,7 @@
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "react": "18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.1",
     "react-query": "^3.39.3",
